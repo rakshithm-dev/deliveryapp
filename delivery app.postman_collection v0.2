@@ -1,0 +1,525 @@
+{
+	"info": {
+		"_postman_id": "18bbf9c4-1998-4d1d-8c85-21d3d514ddf5",
+		"name": "delivery app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44448974",
+		"_collection_link": "https://rocky-3625301.postman.co/workspace/rocky's-Workspace~7f6781f1-5fae-4f9a-8264-6781c8731de4/collection/44448974-18bbf9c4-1998-4d1d-8c85-21d3d514ddf5?action=share&source=collection_link&creator=44448974"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "sign up",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Rakshith\",\r\n  \"password\": \"hi@123\",\r\n  \"address\": \"123 MG Road, Bangalore\",\r\n  \"mobileNumber\": \"7676123783\",\r\n  \"email\": \"samplever478@yopmail.com\",\r\n  \"role\"  : \"user\", // ADMIN or USER\r\n  \"shopName\": \"\",\r\n  \"gstNumber\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"admindelapp@gmail.com\",\r\n  \"password\": \"Del@app001\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://52.205.253.52:3000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"52",
+								"205",
+								"253",
+								"52"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update profile",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Rakshith\",\r\n  \"password\": \"sagsgfj\",\r\n  \"address\": \"123 MG Road, Bangalore\",\r\n  \"mobileNumber\": \"7676123458\",\r\n  \"email\": \"sampleverl2@yopmail.com\",\r\n  \"role\"  : \"user\", // ADMIN or USER\r\n  \"shopName\": \"dbsd\",\r\n  \"gstNumber\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/updateUserProfile?userId=680fb3d1a9bcece542768109",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"updateUserProfile"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "680fb3d1a9bcece542768109"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get profile data",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5kZWxhcHBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQ3OTMzMzM3LCJleHAiOjE3NDc5MzY5Mzd9.64dFJFvaLnGwxr9luVDtRPYwO7OlTvu6p5u6oJaNHHM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://52.205.253.52:3000/api/v1/auth/getUserProfile?userId=680fb24b7871d108ee52664",
+							"protocol": "http",
+							"host": [
+								"52",
+								"205",
+								"253",
+								"52"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"getUserProfile"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "680fb24b7871d108ee52664"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "admin",
+					"item": [
+						{
+							"name": "add product",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "productData",
+											"value": "{\n  \"name\": \"iPhone 15 pro +\",\n  \"quantity\":10,\n  \"description\": \"Latest iPhone with A17 chip\",\n  \"price\": 60000,\n  \"discountedPrice\": 1100,\n  \"category\": \"Mobiles\"\n}\n",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/RAKSHI/Pictures/Screenshots/Screenshot 2023-04-30 220825.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/admin/product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit product by product id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "productData",
+											"value": "{\n  \"name\": \"iPhone 15 pro +\",\n  \"description\": \"Latest iPhone with A16 chip\",\n  \"price\": 70000,\n  \"discountedPrice\": 1100,\n  \"category\": \"Mobiles\"\n}\n",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/RAKSHI/Pictures/Screenshots/Screenshot 2023-04-30 220825.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/admin/product/681f37ae8f361ecc83ae5463",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"product",
+										"681f37ae8f361ecc83ae5463"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all products",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/admin/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete product by product id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/admin/product/681f401f05081b41e8a9bf73",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"product",
+										"681f401f05081b41e8a9bf73"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "get all products",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5kZWxhcHBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQ3NTgwNTY0LCJleHAiOjE3NDc1ODQxNjR9.naSNivK9qOn2O1WScgWcJGcFy1eBuOCrbA-Spo1nkbQ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get product by id",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODFmNTA4NTYwODM0YzBhMmRhNjdjYzYiLCJlbWFpbCI6InNhbXBsZXZlcmxAeW9wbWFpbC5jb20iLCJpYXQiOjE3NDY4ODI3MzcsImV4cCI6MTc0Njg4NjMzN30.tj4M1JhrFOm51jnuVyCZHz_n7Bc3MwZfrYzA07HzPso",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/product/681f417770d1cb3ebff24b9a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"product",
+										"681f417770d1cb3ebff24b9a"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "create order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5kZWxhcHBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQ3OTMzMzM3LCJleHAiOjE3NDc5MzY5Mzd9.64dFJFvaLnGwxr9luVDtRPYwO7OlTvu6p5u6oJaNHHM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"682f596eeefada6d242ba098\",\r\n  \"products\": [\r\n    {\r\n      \"product\": \"682f5994eefada6d242ba09a\",\r\n      \"name\": \"iPhone 15 pro +\",\r\n      \"price\": 60000,  //Original price per unit (MRP)\r\n      \"discountedPrice\" : 55000,  //Actual selling price\r\n      \"quantity\" : 1\r\n    }\r\n  ],\r\n  \"totalAmount\": 60000,     // price * quantity\r\n  \"productDiscount\": 5000,  // MRP - discountedPrice (Discount on product level)\r\n  \"couponCode\": \"SAVE50\",  // Discount on total via coupon\r\n  \"couponDiscount\": 50,\r\n  \"finalAmount\": 54950     //totalAmount - productDiscount - coupon\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/createOrder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"createOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5kZWxhcHBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQ3OTM4MzEyLCJleHAiOjE3NDc5NDE5MTJ9.4biQJX67a4gewff4AMjyWKlHGSqbHwgYR4NS8Bnf4SQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://52.205.253.52:3000/api/v1/orders",
+							"protocol": "http",
+							"host": [
+								"52",
+								"205",
+								"253",
+								"52"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get order details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5kZWxhcHBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQ3OTMzMzM3LCJleHAiOjE3NDc5MzY5Mzd9.64dFJFvaLnGwxr9luVDtRPYwO7OlTvu6p5u6oJaNHHM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/order/6829f78f7f9849348c3867f3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"order",
+								"6829f78f7f9849348c3867f3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get order details",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5kZWxhcHBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQ3OTMzMzM3LCJleHAiOjE3NDc5MzY5Mzd9.64dFJFvaLnGwxr9luVDtRPYwO7OlTvu6p5u6oJaNHHM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\" : \"sgaga\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/order/6829f78f7f9849348c3867f3/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"order",
+								"6829f78f7f9849348c3867f3",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

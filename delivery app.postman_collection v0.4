@@ -1,0 +1,1008 @@
+{
+	"info": {
+		"_postman_id": "18bbf9c4-1998-4d1d-8c85-21d3d514ddf5",
+		"name": "delivery app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44448974",
+		"_collection_link": "https://rocky-3625301.postman.co/workspace/rocky's-Workspace~7f6781f1-5fae-4f9a-8264-6781c8731de4/collection/44448974-18bbf9c4-1998-4d1d-8c85-21d3d514ddf5?action=share&source=collection_link&creator=44448974"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "sign up",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Rakshith\",\r\n  \"password\": \"hi@123\",\r\n  \"address\": \"123 MG Road, Bangalore\",\r\n  \"mobileNumber\": \"7676123722\",\r\n  \"email\": \"samplever0021@yopmail.com\",\r\n  \"role\"  : \"user\", // ADMIN or USER\r\n  \"shopName\": \"\",\r\n  \"gstNumber\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://52.205.253.52:3000/api/v1/auth/signup",
+							"protocol": "http",
+							"host": [
+								"52",
+								"205",
+								"253",
+								"52"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"samplever0021@yopmail.com\",\r\n  \"password\": \"hi@123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://52.205.253.52:3000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"52",
+								"205",
+								"253",
+								"52"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update profile",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Rakshith\",\r\n  \"password\": \"sagsgfj\",\r\n  \"address\": \"123 MG Road, Bangalore\",\r\n  \"mobileNumber\": \"7676123458\",\r\n  \"email\": \"sampleverl2@yopmail.com\",\r\n  \"role\"  : \"user\", // ADMIN or USER\r\n  \"shopName\": \"dbsd\",\r\n  \"gstNumber\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/updateUserProfile?userId=680fb3d1a9bcece542768109",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"updateUserProfile"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "680fb3d1a9bcece542768109"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get profile data",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODMxZmNkNzVjYTFiMTkzYTdjMzE0MTIiLCJlbWFpbCI6InNhbXBsZXZlcjAwMjFAeW9wbWFpbC5jb20iLCJpYXQiOjE3NDgxODE4MjksImV4cCI6MTc0ODE4NTQyOX0.lcHMnRY96gcDHey4McjVZihLT3Yxj014em9KfJvNkdk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/getUserProfile?userId=6831fcd75ca1b193a7c31412",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"getUserProfile"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "6831fcd75ca1b193a7c31412"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "admin",
+					"item": [
+						{
+							"name": "add product",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODMzNDY2N2ZlNjI0OTBkYTVhYzMzZjIiLCJlbWFpbCI6InNhbXBsZXZlcjAwMjFAeW9wbWFpbC5jb20iLCJpYXQiOjE3NDgxOTA4MzAsImV4cCI6MTc0ODE5NDQzMH0.RUKcXa8OHVOOk3ut4Fdwb46UE1jGb-3p9Jm4yKL0Vb4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "productData",
+											"value": "{\n  \"name\": \"iPhone 16 pro\",\n  \"quantity\":10,\n  \"description\": \"Latest iPhone with A17 chip\",\n  \"price\": 60000,\n  \"discountPrice\": 1100,\n  \"category\": \"Mobiles\"\n}\n",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/RAKSHI/Pictures/Screenshots/Screenshot 2023-04-30 220825.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://52.205.253.52:3000/api/v1/admin/product",
+									"protocol": "http",
+									"host": [
+										"52",
+										"205",
+										"253",
+										"52"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit product by product id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "productData",
+											"value": "{\n    \"name\": \"iPhone 15 pro ++\",\n    \"description\": \"Latest iPhone with A17 chip\",\n    \"price\": 65000,\n    \"quantity\": 2,\n    \"discountPrice\": 60000,\n    \"category\": \"Mobiles\"\n}",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/RAKSHI/Pictures/Screenshots/Screenshot 2023-04-30 220825.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/admin/product/681f67a360834c0a2da67cd6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"product",
+										"681f67a360834c0a2da67cd6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all products",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODMzNDY2N2ZlNjI0OTBkYTVhYzMzZjIiLCJlbWFpbCI6InNhbXBsZXZlcjAwMjFAeW9wbWFpbC5jb20iLCJpYXQiOjE3NDgxOTA4MzAsImV4cCI6MTc0ODE5NDQzMH0.RUKcXa8OHVOOk3ut4Fdwb46UE1jGb-3p9Jm4yKL0Vb4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://52.205.253.52:3000/api/v1/admin/products",
+									"protocol": "http",
+									"host": [
+										"52",
+										"205",
+										"253",
+										"52"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODMzNDY2N2ZlNjI0OTBkYTVhYzMzZjIiLCJlbWFpbCI6InNhbXBsZXZlcjAwMjFAeW9wbWFpbC5jb20iLCJpYXQiOjE3NDgxOTA4MzAsImV4cCI6MTc0ODE5NDQzMH0.RUKcXa8OHVOOk3ut4Fdwb46UE1jGb-3p9Jm4yKL0Vb4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://52.205.253.52:3000/api/v1/products/search?category=Mobiles&sort=price&order=desc",
+									"protocol": "http",
+									"host": [
+										"52",
+										"205",
+										"253",
+										"52"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"search"
+									],
+									"query": [
+										{
+											"key": "category",
+											"value": "Mobiles"
+										},
+										{
+											"key": "sort",
+											"value": "price"
+										},
+										{
+											"key": "order",
+											"value": "desc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Dashboard overview",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/admin/dashboard/overview",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"dashboard",
+										"overview"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete product by product id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/admin/product/681f401f05081b41e8a9bf73",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"product",
+										"681f401f05081b41e8a9bf73"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "get all products",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5kZWxhcHBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQ3NTgwNTY0LCJleHAiOjE3NDc1ODQxNjR9.naSNivK9qOn2O1WScgWcJGcFy1eBuOCrbA-Spo1nkbQ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get product by id",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODFmNTA4NTYwODM0YzBhMmRhNjdjYzYiLCJlbWFpbCI6InNhbXBsZXZlcmxAeW9wbWFpbC5jb20iLCJpYXQiOjE3NDY4ODI3MzcsImV4cCI6MTc0Njg4NjMzN30.tj4M1JhrFOm51jnuVyCZHz_n7Bc3MwZfrYzA07HzPso",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/product/681f417770d1cb3ebff24b9a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"product",
+										"681f417770d1cb3ebff24b9a"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "create order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODMxZmNkNzVjYTFiMTkzYTdjMzE0MTIiLCJlbWFpbCI6InNhbXBsZXZlcjAwMjFAeW9wbWFpbC5jb20iLCJpYXQiOjE3NDgxNzcyMjcsImV4cCI6MTc0ODE4MDgyN30.hb_A4C00MgnGqHHRb5rmCARYWfy1GeKTtpJsUESmsQI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"682f596eeefada6d242ba098\",\r\n  \"products\": [\r\n    {\r\n      \"product\": \"682f5994eefada6d242ba09a\",\r\n      \"name\": \"iPhone 15 pro +\",\r\n      \"price\": 60000,  //Original price per unit (MRP)\r\n      \"discountPrice\" : 55000,  //Actual selling price\r\n      \"quantity\" : 1\r\n    }\r\n  ],\r\n  \"totalAmount\": 60000,     // price * quantity\r\n  \"productDiscount\": 5000,  // MRP - discountedPrice (Discount on product level)\r\n  \"couponCode\": \"SAVE50\",  // Discount on total via coupon\r\n  \"couponDiscount\": 50,\r\n  \"finalAmount\": 54950     //totalAmount - productDiscount - coupon\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/createOrder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"createOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5kZWxhcHBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQ3OTM4MzEyLCJleHAiOjE3NDc5NDE5MTJ9.4biQJX67a4gewff4AMjyWKlHGSqbHwgYR4NS8Bnf4SQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://52.205.253.52:3000/api/v1/orders",
+							"protocol": "http",
+							"host": [
+								"52",
+								"205",
+								"253",
+								"52"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get order details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5kZWxhcHBAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQ3OTMzMzM3LCJleHAiOjE3NDc5MzY5Mzd9.64dFJFvaLnGwxr9luVDtRPYwO7OlTvu6p5u6oJaNHHM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/order/6829f78f7f9849348c3867f3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"order",
+								"6829f78f7f9849348c3867f3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update order status based on order id",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODMxZmNkNzVjYTFiMTkzYTdjMzE0MTIiLCJlbWFpbCI6InNhbXBsZXZlcjAwMjFAeW9wbWFpbC5jb20iLCJpYXQiOjE3NDgxNzcyMjcsImV4cCI6MTc0ODE4MDgyN30.hb_A4C00MgnGqHHRb5rmCARYWfy1GeKTtpJsUESmsQI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\" : \"Processing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/order/6829f78f7f9849348c3867f3/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"order",
+								"6829f78f7f9849348c3867f3",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "add to cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODMxZmNkNzVjYTFiMTkzYTdjMzE0MTIiLCJlbWFpbCI6InNhbXBsZXZlcjAwMjFAeW9wbWFpbC5jb20iLCJpYXQiOjE3NDgxNjQzMDgsImV4cCI6MTc0ODE2NzkwOH0.FUhERRxsOGuC7RmIa043AbLBk2zR5uP3L6fwGOeB3go",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": \"682f5994eefada6d242ba09a\",\r\n  \"quantity\": 6\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cart/addTocart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cart",
+								"addTocart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get cart",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODMzNDY2N2ZlNjI0OTBkYTVhYzMzZjIiLCJlbWFpbCI6InNhbXBsZXZlcjAwMjFAeW9wbWFpbC5jb20iLCJpYXQiOjE3NDgxOTA4MzAsImV4cCI6MTc0ODE5NDQzMH0.RUKcXa8OHVOOk3ut4Fdwb46UE1jGb-3p9Jm4yKL0Vb4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://52.205.253.52:3000/api/v1/cart/getCart",
+							"protocol": "http",
+							"host": [
+								"52",
+								"205",
+								"253",
+								"52"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cart",
+								"getCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "summary",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODMxZmNkNzVjYTFiMTkzYTdjMzE0MTIiLCJlbWFpbCI6InNhbXBsZXZlcjAwMjFAeW9wbWFpbC5jb20iLCJpYXQiOjE3NDgxODE4MjksImV4cCI6MTc0ODE4NTQyOX0.lcHMnRY96gcDHey4McjVZihLT3Yxj014em9KfJvNkdk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cart/summary?couponCode=SAVE20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cart",
+								"summary"
+							],
+							"query": [
+								{
+									"key": "couponCode",
+									"value": "SAVE20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update cart",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODMxZmNkNzVjYTFiMTkzYTdjMzE0MTIiLCJlbWFpbCI6InNhbXBsZXZlcjAwMjFAeW9wbWFpbC5jb20iLCJpYXQiOjE3NDgxMDc1MzEsImV4cCI6MTc0ODExMTEzMX0.ggme5qmXNxGuHsaLkr9cSoh5AThKRncx0OXwnmsoqho",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\" : 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cart/updateCart/68320d327455a4dc699c6711",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cart",
+								"updateCart",
+								"68320d327455a4dc699c6711"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clear the particular item from cart",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODMxZmNkNzVjYTFiMTkzYTdjMzE0MTIiLCJlbWFpbCI6InNhbXBsZXZlcjAwMjFAeW9wbWFpbC5jb20iLCJpYXQiOjE3NDgxMDc1MzEsImV4cCI6MTc0ODExMTEzMX0.ggme5qmXNxGuHsaLkr9cSoh5AThKRncx0OXwnmsoqho",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cart/deleteCart/68320128e270b1abc7d66462",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cart",
+								"deleteCart",
+								"68320128e270b1abc7d66462"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clear all items from cart",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODMxZmNkNzVjYTFiMTkzYTdjMzE0MTIiLCJlbWFpbCI6InNhbXBsZXZlcjAwMjFAeW9wbWFpbC5jb20iLCJpYXQiOjE3NDgxMTEyNTgsImV4cCI6MTc0ODExNDg1OH0.O_FGURkGcEROkHFfckvr-BYGgd6Zo967zB5sOCx2t1Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cart/clearCart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cart",
+								"clearCart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "coupon",
+			"item": [
+				{
+					"name": "create coupon",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODMxZmNkNzVjYTFiMTkzYTdjMzE0MTIiLCJlbWFpbCI6InNhbXBsZXZlcjAwMjFAeW9wbWFpbC5jb20iLCJpYXQiOjE3NDgxNzcyMjcsImV4cCI6MTc0ODE4MDgyN30.hb_A4C00MgnGqHHRb5rmCARYWfy1GeKTtpJsUESmsQI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"code\": \"SAVE40\",\r\n  \"discountType\": \"percentage\",      // \"flat\" or \"percentage\"\r\n  \"discountValue\": 20,                // 20 means 20% if percentage, or ₹20 if flat\r\n  \"expiryDate\": \"2025-05-25T23:59:59.999Z\",\r\n  \"minOrderAmount\": 500,              // optional\r\n  \"maxDiscount\": 100                  // optional\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/coupon/createCoupon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"coupon",
+								"createCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "apply coupon",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODMxZmNkNzVjYTFiMTkzYTdjMzE0MTIiLCJlbWFpbCI6InNhbXBsZXZlcjAwMjFAeW9wbWFpbC5jb20iLCJpYXQiOjE3NDgxNzcyMjcsImV4cCI6MTc0ODE4MDgyN30.hb_A4C00MgnGqHHRb5rmCARYWfy1GeKTtpJsUESmsQI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"code\": \"SAVE30\"             \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/coupon/applyCoupon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"coupon",
+								"applyCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update coupon details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODMxZmNkNzVjYTFiMTkzYTdjMzE0MTIiLCJlbWFpbCI6InNhbXBsZXZlcjAwMjFAeW9wbWFpbC5jb20iLCJpYXQiOjE3NDgxMTQ1MjMsImV4cCI6MTc0ODExODEyM30.bs0KZ04_V_QmaFycTk9z65I8avj0lELHZDk85-oXTvg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"code\": \"SAVE35\",\r\n  \"discountType\": \"flat\",\r\n  \"discountValue\": 25,\r\n  \"expiryDate\": \"2026-01-31T23:59:59.999Z\",\r\n  \"minOrderAmount\": 600,\r\n  \"maxDiscount\": 25\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/coupon/updateCoupon/683317887b9efc365a2bad89",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"coupon",
+								"updateCoupon",
+								"683317887b9efc365a2bad89"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete coupon based on coupon id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODMxZmNkNzVjYTFiMTkzYTdjMzE0MTIiLCJlbWFpbCI6InNhbXBsZXZlcjAwMjFAeW9wbWFpbC5jb20iLCJpYXQiOjE3NDgxMTQ1MjMsImV4cCI6MTc0ODExODEyM30.bs0KZ04_V_QmaFycTk9z65I8avj0lELHZDk85-oXTvg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/coupon/deleteCoupon/6833176c7b9efc365a2bad83",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"coupon",
+								"deleteCoupon",
+								"6833176c7b9efc365a2bad83"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all coupons",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODMxZmNkNzVjYTFiMTkzYTdjMzE0MTIiLCJlbWFpbCI6InNhbXBsZXZlcjAwMjFAeW9wbWFpbC5jb20iLCJpYXQiOjE3NDgxMTQ1MjMsImV4cCI6MTc0ODExODEyM30.bs0KZ04_V_QmaFycTk9z65I8avj0lELHZDk85-oXTvg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/coupon/getAllCoupons",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"coupon",
+								"getAllCoupons"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
